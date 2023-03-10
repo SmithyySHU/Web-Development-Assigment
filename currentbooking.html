@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <title>The Taxi Company | Book or Share a ride | Home </title>
+        <script src="BookingSystemScript.js"></script>
     </head>
 
 
-    <body>
+    
         <header>
             <nav>
                 <ul>
@@ -17,31 +19,42 @@
                 </ul>
             </nav>
         </header>
-<body>
 
-    <h1>Current Bookings List</h1>
-    <p id="activeTrips"></p>
+        <body onload="loadPage()">
+        <h1>Current Bookings</h1>
+        <div id="showBookings">
+            <p id="CurentTrips"></p>
+            <button onclick="showAddForm();">Add New Booking</button>
 
-    <script>
-        var currentBookings = [ 
-            'Richard Johnson',
-            'Maxine Woods',
-            'Thomas Willougby',
-            'Paul Walking'
-        ];
+        </div>
+        <br>
+        <div id="addBooking" style="display:none;">
+        <h1>Add a Booking</h1>
+        <form>
+            <div>
+                <label for="PassangerNameImp">Passanger Name:</label>
+                <input type="text" id="PassangerNameImp">
+            </div>
+            <div>
+                <label for="DestinationImp">Destination:</label>
+                <input type="text" id="DestinationImp">
+            </div>
+            <div>
+                <label for="AmountPassangerImp">Number Of Passangers:</label>
+                <input for="Number" id="AmountPassangerImp">
+            </div>
+            <div>
+                <label for="ScheduledBookingImp">Scheduled Booking Time:</label>
+                <input type ="datetime" id="ScheduledBookingImp">
+            </div>
+            <div>
+                <button type="button" onclick="addNewBooking()">Add Bookinng</button>
+                <button type="button" onclick="cancelAdd()">Cancel</button>
+            </div>
 
-        function loadDoc() {#
-        getElementById(currentBookings)
-        };
-
-        var BookingTable = "<table border='1'>";
-            BookingTable += "<tr<td>" + oneTrip + "</td><tr>";
-            BookingTable += "</table>";
-
-
-    </script>
-
-
+        </form>
+        
+    </div>
 
 </body>
 </html>
