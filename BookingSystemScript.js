@@ -1,7 +1,7 @@
 var Bookings = [];
 
 function init() {
-  Bookings = [
+   Bookings = [
     {
       id: 1,
       passName: "Sean Paul",

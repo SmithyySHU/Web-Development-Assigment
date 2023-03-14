@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Taxi Company | Book or Share a ride | Home </title>
+    <script src="DriversSystem.js"></script>
+</head>
+
+<body onload="loadDoc()">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Book A Ride</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="currentbooking.html">Current Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div id="showDrivers">
+        <h1>Current Drivers</h1>
+        <p id="CurrentDrivers"></p>
+        <button onclick="showAddForm();">Add New Driver</button>
+    </div>
+    <br>
+    <div id="addDrivers" style="display:none;">
+        <h1>Add a Booking</h1>
+        <form>
+            <div>
+                <label for="driverNameImp">Drivers Name:</label>
+                <input type="text" id="driverNameImp">
+            </div>
+            <div>
+                <label for="carMakeImp">Car Make:</label>
+                <input type="text" id="carMakeImp">
+            </div>
+            <div>
+                <label for="carModelImp">Car Model:</label>
+                <input type="text" id="carModelImp">
+            </div>
+            <div>
+                <label for="registrationImp">Car Registration:</label>
+                <input type="text" id="registrationImp">
+            </div>
+            <div>
+                <label for="driverNumberImp">Driver Phone Number:</label>
+                <input type="number" id="driverNumberImp">
+            </div>
+            
+            
+            <div>
+                <button type="button" onclick="addDrivers()">Add Driver</button>
+                <button type="button" onclick="cancelAdd()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
