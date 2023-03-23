@@ -139,10 +139,10 @@ async function DisplayEditRoute(routeId) {
             document.getElementById("editRouteEndPoint").value = routedata.RouteEndPoint;
 
             var showFrom = document.getElementById("DisplayEditRoute");
-                var hideForm = document.getElementById("hideFrom");
+            var hideForm = document.getElementById("hideFrom");
 
-                showFrom.style.display = "block";
-                hideForm.style.display = "none";
+            showFrom.style.display = "block";
+            hideForm.style.display = "none";
 
 
 

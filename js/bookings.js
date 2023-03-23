@@ -1,7 +1,7 @@
 var Bookings = [];
 
 function init() {
-   Bookings = [
+  Bookings = [
     {
       id: 1,
       passName: "Sean Paul",
@@ -101,40 +101,40 @@ function showAddForm() {
 }
 
 
-function cancelAdd(){
-    var addBooking = document.getElementById("addBooking");
-    if (addBooking) {
-        addBooking.style.display = "none";
-    }
+function cancelAdd() {
+  var addBooking = document.getElementById("addBooking");
+  if (addBooking) {
+    addBooking.style.display = "none";
+  }
 
-    var showBookings = document.getElementById("showBookings");
-    if (showBookings) {
-        showBookings.style.display = "block";
-    }
+  var showBookings = document.getElementById("showBookings");
+  if (showBookings) {
+    showBookings.style.display = "block";
+  }
 }
 
 function remove(booking) {
-    var index = Bookings.findIndex(function(item) {
-      return JSON.stringify(item) === JSON.stringify(booking);
-    });
-    if (index !== -1) {
-      Bookings.splice(index, 1);
-    }
-    var table = createTable(Bookings);
-    document.getElementById("CurrentTrips").innerHTML = table;
+  var index = Bookings.findIndex(function (item) {
+    return JSON.stringify(item) === JSON.stringify(booking);
+  });
+  if (index !== -1) {
+    Bookings.splice(index, 1);
   }
-  
+  var table = createTable(Bookings);
+  document.getElementById("CurrentTrips").innerHTML = table;
+}
 
-  function remove(booking) {
-    var index = Bookings.findIndex(function(item) {
-      return item.id === booking.id;
-    });
-    if (index !== -1) {
-      Bookings.splice(index, 1);
-    }
-    var table = createTable(Bookings);
-    document.getElementById("CurrentTrips").innerHTML = table;
+
+function remove(booking) {
+  var index = Bookings.findIndex(function (item) {
+    return item.id === booking.id;
+  });
+  if (index !== -1) {
+    Bookings.splice(index, 1);
   }
-  
+  var table = createTable(Bookings);
+  document.getElementById("CurrentTrips").innerHTML = table;
+}
+
 
 

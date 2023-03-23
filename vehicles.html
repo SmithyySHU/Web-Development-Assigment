@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Taxi Company | Book or Share a ride | Vehicles </title>
+    <script src="js/drivers.js"></script>
+</head>
+
+<body onload="loadDoc()">
+    <header>
+
+        <h1>The Taxi Company</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="booking.html">Current Bookings</a></li>
+                <li><a href="vehicles.html">Current Vehicles</a></li>
+                <li><a href="routes.html">Current Routes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<h1>Current Vehicles </h1>
+
+    <div id = "showError"></div>
+    
+    <div id = "hideFrom">
+        <button onclick="showAddForm();">Add New Vehicle</button>
+        <div id = "VehicleOut" >
+    </div>
+    <br>
+</div>
+<div id="addVehicle" style="display:none;">
+    <h1>Add a Vehicle</h1>
+
+
+    <form>
+        <div>
+            <label for="newDriver">Driver:</label>
+            <input type="text" id="newDriver">
+        </div>
+        <div>
+            <label for="newMake">Vehicle Make:</label>
+            <input type="text" id="newMake">
+        </div>
+        <div>
+            <label for="newModel">Vehicle Model:</label>
+            <input type="text" id="newModel">
+        </div>
+        <div>
+            <label for="newRegistration">Vehicle Registration:</label>
+            <input type="text" id="newRegistration">
+        </div>
+        <div>
+            <label for="newCapacity">Vehicle Capacity:</label>
+            <input type="text" id="newCapacity">
+        </div>
+        
+        
+        <div>
+            <button type="button" onclick="addVehicle()">Add Vehicle</button>
+            <button type="button" onclick="cancelAdd()">Cancel</button>
+        </div>
+
+        
+    </form>
+</div>
+
+    <div id ="DisplayEditVehicle" style ="display: none">
+    <form>
+        <input type =  "hidden" id="editvehicleID"/>
+        <div>
+            <label for="editDriver">Driver:</label>
+            <input type="text" id="editDriver">
+        </div>
+        <div>
+            <label for="editMake">Vehicle Make:</label>
+            <input type="text" id="editMake">
+        </div>
+        <div>
+            <label for="editModel">Vehicle Model:</label>
+            <input type="text" id="editModel">
+        </div>
+        <div>
+            <label for="editRegistration">Vehicle Registration:</label>
+            <input type="text" id="editRegistration">
+        </div>
+        <div>
+            <label for="editCapacity">Vehicle Capacity:</label>
+            <input type="text" id="editCapacity">
+        </div>
+        
+        
+        <div>
+            <button type="button" onclick="seditVehicle()">Save Vehicle Edit</button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

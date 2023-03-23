@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>The Taxi Company | Book or Share a ride | Home </title>
+    <title>The Taxi Company | Book or Share a ride | Routes </title>
     <script src="js/routes.js"></script>
 </head>
 
@@ -13,66 +14,67 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="booking.html">Book A Ride</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="currentbooking.html">Current Bookings</a></li>
-                <li><a href="currentdrivers.html">Current Drivers</a></li>
+                <li><a href="booking.html">Current Bookings</a></li>
+                <li><a href="vehicles.html">Current Vehicles</a></li>
+                <li><a href="routes.html">Current Routes</a></li>
             </ul>
         </nav>
     </header>
 
     <h1>Current Routes </h1>
 
-    <div id = "showError"></div>
-    
-    <div id = "hideFrom">
+    <div id="showError"></div>
+
+    <div id="hideFrom">
         <button onclick="showAddForm();">Add New Route</button>
-        <div id = "RouteOut" >
+        <div id="RouteOut">
+        </div>
+        <br>
     </div>
-    <br>
-</div>
-<div id="addRoute" style="display:none;">
-    <h1>Add a Route</h1>
+    <div id="addRoute" style="display:none;">
+        <h1>Add a Route</h1>
 
 
-    <form>
-        <div>
-            <label for="newStartPoint">Route Start Point:</label>
-            <input type="text" id="newStartPoint">
-        </div>
-        <div>
-            <label for="newEndPoint">Route End Point:</label>
-            <input type="text" id="newEndPoint">
-        </div>
-        
-        
-        <div>
-            <button type="button" onclick="addRoute()">Add Route</button>
-            <button type="button" onclick="cancelAdd()">Cancel</button>
-        </div>
+        <form>
+            <div>
+                <label for="newStartPoint">Route Start Point:</label>
+                <input type="text" id="newStartPoint">
+            </div>
+            <div>
+                <label for="newEndPoint">Route End Point:</label>
+                <input type="text" id="newEndPoint">
+            </div>
 
-        
-    </form>
-</div>
 
-    <div id ="DisplayEditRoute" style ="display: none">
-    <form>
-        <input type =  "hidden" id="editrouteID"/>
-        <div>
-            <label for="editStartPoint">Route Start Point:</label>
-            <input type="text" id="editRouteStartPoint">
-        </div>
-        <div>
-            <label for="editEndPoint">Route End Point:</label>
-            <input type="text" id="editRouteEndPoint">
-        </div>
-        
-        
-        <div>
-            <button type="button" onclick="seditRoute()">Save Route Edit</button>
-        </div>
+            <div>
+                <button type="button" onclick="addRoute()">Add Route</button>
+                <button type="button" onclick="cancelAdd()">Cancel</button>
+            </div>
 
-    </form>
-</div>
+
+        </form>
+    </div>
+
+    <div id="DisplayEditRoute" style="display: none">
+        <form>
+            <input type="hidden" id="editrouteID" />
+            <div>
+                <label for="editStartPoint">Route Start Point:</label>
+                <input type="text" id="editRouteStartPoint">
+            </div>
+            <div>
+                <label for="editEndPoint">Route End Point:</label>
+                <input type="text" id="editRouteEndPoint">
+            </div>
+
+
+            <div>
+                <button type="button" onclick="seditRoute()">Save Route Edit</button>
+            </div>
+
+        </form>
+    </div>
 </body>
+
 </html>

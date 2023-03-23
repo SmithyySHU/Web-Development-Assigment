@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Taxi Company | Book or Share a ride | Home </title>
-    </head>
+
+<head>
+    <title>The Taxi Company | Book or Share a ride | Current Bookings </title>
+    <script src="booking.html"></script>
+</head>
+
+<body onload="loadDoc()">
+    <header>
+
+        <h1>The Taxi Company</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="booking.html">Current Bookings</a></li>
+                <li><a href="vehicles.html">Current Vehicles</a></li>
+                <li><a href="routes.html">Current Routes</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
-    <body>
-        <header>
+    <div id="showBookings">
+        <h1>Current Bookings</h1>
+        <p id="CurrentTrips"></p>
+        <button onclick="showAddForm();">Add New Booking</button>
+    </div>
+    <br>
+    <div id="addBooking" style="display:none;">
+        <h1>Add a Booking</h1>
+        <form>
+            <div>
+                <label for="PassengerNameImp">Passenger Name:</label>
+                <input type="text" id="PassengerNameImp">
+            </div>
+            <div>
+                <label for="DestinationImp">Destination:</label>
+                <input type="text" id="DestinationImp">
+            </div>
+            <div>
+                <label for="AmountPassengerImp">Number Of Passengers:</label>
+                <input type="number" id="AmountPassengerImp">
+            </div>
+            <div>
+                <label for="ScheduledBookingImp">Scheduled Booking Time:</label>
+                <input type="datetime-local" id="ScheduledBookingImp">
+            </div>
 
-            <h1>The Taxi Company</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="booking.html">Book A Ride</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="currentbooking.html">Current Bookings</a></li>
-                    <li><a href="currentdrivers.html">Current Drivers</a></li>
-                </ul>
-            </nav>
-        </header>
+            <div>
+                <button type="button" onclick="addBooking()">Add Booking</button>
+                <button type="button" onclick="cancelAdd()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
