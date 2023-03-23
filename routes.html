@@ -24,6 +24,7 @@
     <h1>Current Routes </h1>
 
     <div id = "showError"></div>
+    
     <div id = "hideFrom">
         <button onclick="showAddForm();">Add New Route</button>
         <div id = "RouteOut" >
@@ -46,9 +47,31 @@
         
         
         <div>
-            <button type="button" onclick="addRoute()">Add Driver</button>
+            <button type="button" onclick="addRoute()">Add Route</button>
             <button type="button" onclick="cancelAdd()">Cancel</button>
         </div>
+
+        
+    </form>
+</div>
+
+    <div id ="DisplayEditRoute" style ="display: none">
+    <form>
+        <input type =  "hidden" id="editrouteID"/>
+        <div>
+            <label for="editStartPoint">Route Start Point:</label>
+            <input type="text" id="editRouteStartPoint">
+        </div>
+        <div>
+            <label for="editEndPoint">Route End Point:</label>
+            <input type="text" id="editRouteEndPoint">
+        </div>
+        
+        
+        <div>
+            <button type="button" onclick="seditRoute()">Save Route Edit</button>
+        </div>
+
     </form>
 </div>
 </body>
