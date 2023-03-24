@@ -3,7 +3,7 @@
 
 <head>
     <title>The Taxi Company | Book or Share a ride | Current Bookings </title>
-    <script src="bookings.js"></script>
+    <script src="js/bookings.js"></script>
 </head>
 
 <body onload="loadDoc()">
@@ -23,38 +23,84 @@
     </header>
 
 
-    <div id="showBookings">
-        <h1>Current Bookings</h1>
-        <p id="CurrentTrips"></p>
+    <h1>Current Bookings </h1>
+
+    <div id = "showError"></div>
+    
+    <div id = "hideFrom">
         <button onclick="showAddForm();">Add New Booking</button>
+        <div id = "BookingOut" >
     </div>
     <br>
-    <div id="addBooking" style="display:none;">
-        <h1>Add a Booking</h1>
-        <form>
-            <div>
-                <label for="PassengerNameImp">Passenger Name:</label>
-                <input type="text" id="PassengerNameImp">
-            </div>
-            <div>
-                <label for="DestinationImp">Destination:</label>
-                <input type="text" id="DestinationImp">
-            </div>
-            <div>
-                <label for="AmountPassengerImp">Number Of Passengers:</label>
-                <input type="number" id="AmountPassengerImp">
-            </div>
-            <div>
-                <label for="ScheduledBookingImp">Scheduled Booking Time:</label>
-                <input type="datetime-local" id="ScheduledBookingImp">
-            </div>
+</div>
+<div id="addBooking" style="display:none;">
+    <h1>Add a Booking</h1>
 
-            <div>
-                <button type="button" onclick="addBooking()">Add Booking</button>
-                <button type="button" onclick="cancelAdd()">Cancel</button>
-            </div>
-        </form>
-    </div>
+
+
+    <form>
+        <div>
+            <label for="newPickupLocation">Pickup Location:</label>
+            <input type="text" id="newPickupLocation">
+        </div>
+        <div>
+            <label for="newDropOffLocation">Drop Off Location:</label>
+            <input type="text" id="newDropOffLocation">
+        </div>
+        <div>
+            <label for="newCurrentPassenger">Current Passenger:</label>
+            <input type="text" id="newCurrentPassenger">
+        </div>
+        <div>
+            <label for="newPassengerName">Passenger Name:</label>
+            <input type="text" id="newPassengerName">
+        </div>
+        <div>
+            <label for="newVehicleId">Vehicle ID:</label>
+            <input type="text" id="newVehicleId">
+        </div>
+        
+        
+        <div>
+            <button type="button" onclick="addBooking()">Add Booking</button>
+            <button type="button" onclick="cancelAdd()">Cancel</button>
+        </div>
+
+        
+    </form>
+</div>
+
+    <div id ="DisplayEditBooking" style ="display: none">
+    <form>
+        <input type =  "hidden" id="editbookingID"/>
+        <div>
+            <label for="editPickupLocation">Pickup Location:</label>
+            <input type="text" id="editPickupLocation">
+        </div>
+        <div>
+            <label for="editDropOffLocation">Drop Off Location:</label>
+            <input type="text" id="editDropOffLocation">
+        </div>
+        <div>
+            <label for="editCurrentPassenger">Current Passenger:</label>
+            <input type="text" id="editCurrentPassenger">
+        </div>
+        <div>
+            <label for="editPassengerName">Passenger Name:</label>
+            <input type="text" id="editPassengerName">
+        </div>
+        <div>
+            <label for="editVehicleId">Vehicle ID:</label>
+            <input type="text" id="editVehicleId">
+        </div>
+        
+        
+        <div>
+            <button type="button" onclick="seditBooking()">Save Booking Edit</button>
+        </div>
+
+    </form>
+</div>
 </body>
-
 </html>
+
