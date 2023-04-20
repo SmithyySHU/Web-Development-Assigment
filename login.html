@@ -4,6 +4,7 @@
 <head>
     <title>The Taxi Company | Book or Share a ride | Login </title>
     <script src="authentication/authentication.js"></script>
+    <link rel="stylesheet" href="stylesheet/style.css">
 </head>
 
 <body>
@@ -14,13 +15,15 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li style="float:right"><a href="login.html">Login</a></li>
                 <li><a href="booking.html">Current Bookings</a></li>
                 <li><a href="vehicles.html">Current Vehicles</a></li>
                 <li><a href="routes.html">Current Routes</a></li>
             </ul>
         </nav>
     </header>
+
+    <h1>Login</h1>
 
     <div id='loginForm'>
 
@@ -35,7 +38,7 @@
       </div>
 
       <div>
-        <button type="button" onclick="loginbutton()">Login</button>
+        <button type="button" class="button" onclick="loginbutton()">Login</button>
       </div>
     </div>
     </form>

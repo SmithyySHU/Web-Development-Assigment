@@ -24,8 +24,8 @@ async function fetchBookings() {
                 htmlR += "<td>" + Booking.PassengerName + "</td>"
                 htmlR += "<td>" + Booking.VehicleId + "</td>"
 
-                htmlR += "<td><button onclick='DisplayEditBooking(" + Booking.Id + ")'> Edit Booking </button></td>";
-                htmlR += "<td><button onclick='deletebooking(" + Booking.Id + ")'> Remove Booking  </button></td>";
+                htmlR += "<td><button class=button2 onclick='DisplayEditBooking(" + Booking.Id + ")'> Edit Booking </button></td>";
+                htmlR += "<td><button class=button2 onclick='deletebooking(" + Booking.Id + ")'> Remove Booking  </button></td>";
                 htmlR += "<tr>"
 
 
