@@ -48,13 +48,23 @@ function displayError(error) {
 }
 
 function loadDoc() {
-    fetchVehicles()
-
+    if (localStorage.getItem("role") !== "1" && localStorage.getItem("role") !== "2") {
+        alert("You need to login to view Vehicles");
+        window.location.href = "./";
+        return;
+      } else {
+        fetchVehicles();
+      }
 }
 
 loadDoc()
 
 function addVehicle() {
+
+    if (localStorage.getItem("role") != 2){
+        alert("Only a Manager can add vehicles.")
+    
+        return }
     var newvehicle = JSON.stringify({
         Driver: document.getElementById("newDriver").value,
         Make: document.getElementById("newMake").value,
@@ -97,6 +107,11 @@ function addVehicle() {
 }
 
 function showAddForm() {
+
+    if (localStorage.getItem("role") != 2){
+        alert("Only a Manager can add routes")
+    
+        return }
     var showFrom = document.getElementById("addVehicle");
     var hideForm = document.getElementById("hideFrom");
 
@@ -105,6 +120,11 @@ function showAddForm() {
 }
 
 function deletevehicle(vehicleId) {
+
+    if (localStorage.getItem("role") != 2){
+        alert("Only a Manager can add routes")
+    
+        return }
     fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/vehicle/" + vehicleId, {
         method: "DELETE"
 
@@ -126,6 +146,12 @@ function deletevehicle(vehicleId) {
 }
 
 async function DisplayEditVehicle(vehicleId) {
+
+    if (localStorage.getItem("role") != 2){
+        alert("Only a Manager can edit vehicles.")
+    
+        return }
+
     await fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/vehicle/" + vehicleId)
         .then(async function (response) {
             if (response.ok) {

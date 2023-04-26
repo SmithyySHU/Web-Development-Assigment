@@ -46,7 +46,13 @@ function displayError(error) {
 }
 
 function loadDoc() {
-    fetchroutes()
+    if (localStorage.getItem("role") !== "1" && localStorage.getItem("role") !== "2") {
+        alert("You need to login to view Vehicles");
+        window.location.href = "./";
+        return;
+      } else {
+        fetchroutes();
+      }
 
 }
 
@@ -54,6 +60,9 @@ function loadDoc() {
 loadDoc()
 
 function addRoute() {
+    
+   
+
     var newroute = JSON.stringify({
         RouteStartPoint: document.getElementById("newStartPoint").value,
         RouteEndPoint: document.getElementById("newEndPoint").value
@@ -92,6 +101,11 @@ function addRoute() {
 }
 
 function showAddForm() {
+    if (localStorage.getItem("role") != 2){
+        alert("Only a Manager can add routes")
+    
+        return }
+
     var showFrom = document.getElementById("addRoute");
     var hideForm = document.getElementById("hideFrom");
 
@@ -102,6 +116,12 @@ function showAddForm() {
 
 
 function deleteroute(routeId) {
+
+    if (localStorage.getItem("role") != 2){
+        alert("Only a Manager can delete routes")
+    
+        return }
+
     fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/route/" + routeId, {
         method: "DELETE"
 
@@ -124,6 +144,12 @@ function deleteroute(routeId) {
 
 
 async function DisplayEditRoute(routeId) {
+    if (localStorage.getItem("role") != 2){
+        alert("Only a Manager can edit routes")
+    
+        return }
+
+
     await fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/route/" + routeId)
         .then(async function (response) {
             if (response.ok) {

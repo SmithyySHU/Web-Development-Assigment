@@ -48,7 +48,14 @@ function displayError(error) {
 }
 
 function loadDoc() {
-    fetchBookings()
+    if (localStorage.getItem("role") !== "1" && localStorage.getItem("role") !== "2") {
+        alert("You need to login to view bookings");
+        window.location.href = "./";
+        return;
+      } else {
+        fetchBookings();
+      }
+    
 
 }
 

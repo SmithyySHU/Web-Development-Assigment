@@ -28,7 +28,23 @@ function loginbutton(){
 
 .then(function(data){
     user = data;
-    displayUserDetails();
+
+if (data["authenticated"] == true){
+
+
+    localStorage.setItem("username", data["username"]);
+    localStorage.setItem("role", data["role"]);
+    localStorage.setItem("name", data["name"]);
+
+
+    role = data.role
+    authencation();
+    window.location.href = "./";
+
+    } else {
+        alert("Login Failed"); 
+    }
+
     if (response.ok) {
         return response.json();
     }
@@ -41,12 +57,10 @@ function loginbutton(){
 }
 
 
-function displayUserDetails(){
-    document.getElementById("name").innerHTML = user.name;
-    document.getElementById("role").innerHTML = user.role;
-    document.getElementById("auth").innerHTML = user.authenticated
 
-}
+
+
+
 
 
 

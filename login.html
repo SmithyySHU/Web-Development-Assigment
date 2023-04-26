@@ -4,24 +4,26 @@
 <head>
     <title>The Taxi Company | Book or Share a ride | Login </title>
     <script src="authentication/authentication.js"></script>
+    
     <link rel="stylesheet" href="stylesheet/style.css">
 </head>
 
 <body>
     <header>
 
-        <h1>The Taxi Company</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li style="float:right"><a href="login.html">Login</a></li>
-                <li><a href="booking.html">Current Bookings</a></li>
-                <li><a href="vehicles.html">Current Vehicles</a></li>
-                <li><a href="routes.html">Current Routes</a></li>
-            </ul>
-        </nav>
-    </header>
+      <h1>The Taxi Company</h1>
+      <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li id = "Login" style="float:right;display:block;"><a href="login.html">Login</a></li>
+            <li id = "Logout" style="float:right;display:none;"><a href = "#" onclick = "logout();" return false>Logout</a></li>
+            <li><a id ="bookings" style="display:none;" href="booking.html">Current Bookings</a></li>
+            <li><a id ="vehicles" style="display:none;" href="vehicles.html">Current Vehicles</a></li>
+            <li><a id ="routes" style="display:none;" href="routes.html">Current Routes</a></li>
+        </ul>
+    </nav>
+</header>
 
     <h1>Login</h1>
 
@@ -43,10 +45,7 @@
     </div>
     </form>
     
-    <p id="name"></p>
-    <p id="role"></p>
-    <p id="auth"></p>
-    <p id="error"></p>
 
+    <script src="js/logout.js"></script>
     </body>
     </html>
