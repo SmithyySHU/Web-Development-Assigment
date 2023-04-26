@@ -24,8 +24,8 @@ async function fetchVehicles() {
                 htmlR += "<td>" + vehicle.Registration + "</td>"
                 htmlR += "<td>" + vehicle.Capacity + "</td>"
 
-                htmlR += "<td><button onclick='DisplayEditVehicle(" + vehicle.Id + ")'> Edit Vehicle </button></td>";
-                htmlR += "<td><button onclick='deletevehicle(" + vehicle.Id + ")'> Remove Vehicle  </button></td>";
+                htmlR += "<td><button class=button2 onclick='DisplayEditVehicle(" + vehicle.Id + ")'> Edit Vehicle </button></td>";
+                htmlR += "<td><button class=button2 onclick='deletevehicle(" + vehicle.Id + ")'> Remove Vehicle  </button></td>";
                 htmlR += "<tr>"
 
 

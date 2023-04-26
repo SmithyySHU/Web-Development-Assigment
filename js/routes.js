@@ -21,8 +21,8 @@ async function fetchroutes() {
                 htmlR += "<td>" + route.Id + "</td>"
                 htmlR += "<td>" + route.RouteStartPoint + "</td>"
                 htmlR += "<td>" + route.RouteEndPoint + "</td>"
-                htmlR += "<td><button onclick='DisplayEditRoute(" + route.Id + ")'> Edit Route </button></td>";
-                htmlR += "<td><button onclick='deleteroute(" + route.Id + ")'> Cancel Route </button></td>";
+                htmlR += "<td><button class=button2 onclick='DisplayEditRoute(" + route.Id + ")'> Edit Route </button></td>";
+                htmlR += "<td><button class=button2 onclick='deleteroute(" + route.Id + ")'> Cancel Route </button></td>";
                 htmlR += "<tr>"
 
 
