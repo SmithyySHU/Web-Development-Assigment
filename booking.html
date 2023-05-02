@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-
+<!-- Displays Title-->
 <head>
     <title>The Taxi Company | Book or Share a ride | Current Bookings </title>
+    <!-- Booking Script Loaded-->
     <script src="js/bookings.js"></script>
     
     <link rel="stylesheet" href="stylesheet/style.css">
 </head>
-
+<!-- Displays Logo on the Page-->
 <header>
     <div class="logo">
     <img src="images/logo.png" alt="The Taxi Company">
     </div>
 </header>
 
+<!-- Load Doc function is loaded for javascript functions to start-->
 <body onload="loadDoc()">
     <header>
 
         <h1>The Taxi Company</h1>
+        <!-- Navigation Bar -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -34,19 +37,23 @@
 
     <h1>Current Bookings </h1>
 
+    <!-- Div for error display if error occurs-->
     <div id = "showError"></div>
     
+    <!-- Div for when activates Hides the booking form and add new booking button-->
     <div id = "hideFrom">
         <button class="button" onclick="showAddForm();">Add New Booking</button>
+        <!-- Booking Div for HTML table-->
         <div id = "BookingOut" >
     </div>
     <br>
 </div>
+<!-- Add Booking Div, When activated by block shows-->
 <div id="addBooking" style="display:none;">
     <h1>Add a Booking</h1>
 
 
-
+    <!-- Form that links to javascript with ID-->
     <form>
         <div>
             <label for="newPickupLocation">Pickup Location:</label>
@@ -78,8 +85,10 @@
         
     </form>
 </div>
-
+<!-- Edit Booking Div, When activated by block shows-->
     <div id ="DisplayEditBooking" style ="display: none">
+
+        <!-- Form that links to javascript with ID-->
     <form>
         <input type =  "hidden" id="editbookingID"/>
         <div>
@@ -112,12 +121,14 @@
 
 </div>
 
+<!-- Footer -->
 <footer>
 
     The Taxi Company © 2023
 
 </footer>
 
+<!-- Logout Script-->
 <script src="js/logout.js"></script>
 </body>
 </html>

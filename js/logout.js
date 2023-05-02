@@ -1,3 +1,4 @@
+// Logout function removes the current stored data login from local storage and returns back to main home page
 function logout(){
     localStorage.removeItem("username");
     localStorage.removeItem("role");
@@ -6,6 +7,7 @@ function logout(){
     window.location.href = "./";
 }
 
+// Hides and Shows different items on the navigation bar depending on if logged in and what user role. 
 function authencation(){
     if (localStorage.getItem("role") == 1) {
         document.getElementById("bookings").style.display = "block";

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 
+<!-- Displays Title-->
 <head>
     <title>The Taxi Company | Book or Share a ride | Login </title>
+    <!-- Authentication javascript loaded-->
     <script src="authentication/authentication.js"></script>
     
     <link rel="stylesheet" href="stylesheet/style.css">
 </head>
 
+<!-- Displays logo on the page-->
 <header>
   <div class="logo">
   <img src="images/logo.png" alt="The Taxi Company">
@@ -18,6 +21,7 @@
     <header>
 
       <h1>The Taxi Company</h1>
+      <!-- Navigation Bar -->
       <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -33,8 +37,10 @@
 
     <h1>Login</h1>
 
+    <!-- Div for the login form-->
     <div id='loginForm'>
 
+      <!-- Form outputed for user input for username and password to be validated -->
     <form>
       <div>
         <label for="Username">Username</label>
@@ -45,18 +51,21 @@
         <input type="text" id="password">
       </div>
 
+      <!-- When loginbutton is pressed then the function is activated for the js script-->
       <div>
         <button type="button" class="button" onclick="loginbutton()">Login</button>
       </div>
     </div>
     </form>
     
+    <!-- Footer -->
     <footer>
 
       The Taxi Company © 2023
 
   </footer>
 
+  <!-- Logout Script -->
     <script src="js/logout.js"></script>
     </body>
     </html>

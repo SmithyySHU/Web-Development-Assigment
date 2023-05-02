@@ -1,18 +1,25 @@
+// Array to hold the route data
 var Routes = [];
 
+//Function to fetch routes data from live API enviroment
 async function fetchroutes() {
 
+    //Fetch Api to retive the data from the live enviroment 
     await fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/route")
         .then(async function (response) {
             if (response.ok) {
+                //If the response is successful then data is returned in json
                 return await response.json();
             }
+            //If the repsonse fails then the error is displayed
             throw new Error(response.status + ' ' + response.statusText);
         })
         .then(function (routedata) {
 
+            // Create an HTML table to display the data
             let htmlR = '<table border="1"><tr><th>Route Id</th><th>Route Starting Point</th><th>Route End Point</th></tr>'
 
+            //Loops though each routes and generates the table rows in the HTML table
             routedata.forEach(route => {
                 console.log(route.Id)
 
@@ -41,10 +48,12 @@ async function fetchroutes() {
 
 }
 
+// Function to display error message on the page
 function displayError(error) {
     document.getElementById("showError").innerHTML = error;
 }
 
+// Function to check that the user is logged in and if they are then loads the routes table
 function loadDoc() {
     if (localStorage.getItem("role") !== "1" && localStorage.getItem("role") !== "2") {
         alert("You need to login to view Vehicles");
@@ -59,6 +68,7 @@ function loadDoc() {
 
 loadDoc()
 
+// Function to add new routes
 function addRoute() {
     
    
@@ -68,7 +78,7 @@ function addRoute() {
         RouteEndPoint: document.getElementById("newEndPoint").value
     });
 
-
+    // Post request from live API enviroemnt 
     fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/route", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -78,6 +88,7 @@ function addRoute() {
 
         .then(function (response) {
             if (response.ok) {
+                // If the response is successful then routes table is updated and the form is hidded
                 fetchroutes();
                 var showFrom = document.getElementById("addRoute");
                 var hideForm = document.getElementById("hideFrom");
@@ -88,7 +99,7 @@ function addRoute() {
 
             }
             else {
-
+                // If the response fails then error message is displayed
                 throw new Error('Oops. ' + response.status + ' ' + response.statusText);
             }
 
@@ -100,6 +111,7 @@ function addRoute() {
 
 }
 
+//Function to add form for routes only if they are a manager
 function showAddForm() {
     if (localStorage.getItem("role") != 2){
         alert("Only a Manager can add routes")
@@ -114,24 +126,25 @@ function showAddForm() {
 }
 
 
-
+//Function to delete a route from live API enviroment only if they are a manager
 function deleteroute(routeId) {
 
     if (localStorage.getItem("role") != 2){
         alert("Only a Manager can delete routes")
     
         return }
-
+// Sends delete request to live enviroment by the ID of the routes data
     fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/route/" + routeId, {
         method: "DELETE"
 
     })
         .then(function (response) {
             if (response.ok) {
+                //If the request is successful then routes table is updated
                 fetchroutes();
             }
             else {
-
+                // if the request fails then error message is displayed
                 throw new Error('Oops. ' + response.status + ' ' + response.statusText);
             }
 
@@ -142,22 +155,25 @@ function deleteroute(routeId) {
 
 }
 
-
+// Function to display edit form by route ID only if the user has a manager role
 async function DisplayEditRoute(routeId) {
     if (localStorage.getItem("role") != 2){
         alert("Only a Manager can edit routes")
     
         return }
 
-
+// Fetches data from live API enviroment 
     await fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/route/" + routeId)
         .then(async function (response) {
             if (response.ok) {
+                // If responce is successfull then the route is put in JSON
                 return await response.json();
             }
+            // If the responce is uncsuccessful then error message is displayed
             throw new Error(response.status + ' ' + response.statusText);
         })
         .then(function (routedata) {
+            // Sets the values of the edit form based on the ID that has been fetched and displays the edit form.
             document.getElementById("editrouteID").value = routedata.Id
 
 
@@ -183,6 +199,7 @@ async function DisplayEditRoute(routeId) {
 
 }
 
+// Function to send the edited data to live enviroment
 async function seditRoute() {
 
     var seditRoute = JSON.stringify({
@@ -192,7 +209,7 @@ async function seditRoute() {
 
     });
 
-
+    // Data is put to live enviroment and submitted
     fetch("http://webteach_net.hallam.shu.ac.uk/cmsds/api/route", {
 
         method: "PUT",
@@ -202,6 +219,7 @@ async function seditRoute() {
     })
         .then(function (response) {
             if (response.ok) {
+                // If request is successful the the route table is updated
                 fetchroutes();
                 var showFrom = document.getElementById("DisplayEditRoute");
                 var hideForm = document.getElementById("hideFrom");
@@ -212,7 +230,7 @@ async function seditRoute() {
 
             }
             else {
-
+                // If request fails then error is displayed
                 throw new Error('Oops. ' + response.status + ' ' + response.statusText);
             }
 
